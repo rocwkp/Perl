@@ -1,0 +1,86 @@
+  <!-- -->
+  <GlobalParam  round="5" count="180" FRTime="50" PacketSize="1472" delarp="0" PauseTime="50" CygwinPath="d:\test\cygwin\bin"  >
+    
+    <ActionItem FREnable="1" PingEnable="1" IperfEnable="1" IperfSizeEnable="0" PingSizeEnable="0" />
+
+    <AllSenarioInfo>    	
+    	<SenarioInfo Senarioenable="1" SenarioName="5hop" SrcWanIP="192.168.1.12" SrcLanIP="10.1.1.12" DstWanIP="192.168.1.18" DstLanIP="10.1.1.18"/>
+    	<SenarioInfo Senarioenable="1" SenarioName="10hop" SrcWanIP="192.168.1.12" SrcLanIP="10.1.1.12" DstWanIP="192.168.1.26" DstLanIP="10.1.1.26"/>
+    	<SenarioInfo Senarioenable="1" SenarioName="15hop" SrcWanIP="192.168.1.12" SrcLanIP="10.1.1.12" DstWanIP="192.168.1.31" DstLanIP="10.1.1.31"/>
+    	<SenarioInfo Senarioenable="0" SenarioName="3hop" SrcWanIP="192.168.1.12" SrcLanIP="11.0.0.12" DstWanIP="192.168.1.15" DstLanIP="11.0.0.15"/>
+    	<SenarioInfo Senarioenable="0" SenarioName="7hop" SrcWanIP="192.168.1.12" SrcLanIP="11.0.0.12" DstWanIP="192.168.1.20" DstLanIP="11.0.0.20"/>
+    	<SenarioInfo Senarioenable="0" SenarioName="13hop" SrcWanIP="192.168.1.12" SrcLanIP="11.0.0.12" DstWanIP="192.168.1.29" DstLanIP="11.0.0.29"/>
+
+    			
+		</AllSenarioInfo>
+
+
+    <CmdList>  
+
+    	<Cmd cenable="0" boxcmd1="query_interval" boxvalue1="4" boxcmd2="reply_interval " boxvalue2="4"/>
+    	<Cmd cenable="0" boxcmd1="query_interval" boxvalue1="2" boxcmd2="reply_interval " boxvalue2="2"/>
+    	<Cmd cenable="0" boxcmd1="query_interval" boxvalue1="1" boxcmd2="reply_interval " boxvalue2="1"/>
+    	<Cmd cenable="0" boxcmd1="query_interval" boxvalue1="6" boxcmd2="reply_interval " boxvalue2="6"/>
+    	<Cmd cenable="0" boxcmd1="query_interval" boxvalue1="8" boxcmd2="reply_interval " boxvalue2="8"/>
+    	<Cmd cenable="0" boxcmd1="query_interval" boxvalue1="16" boxcmd2="reply_interval " boxvalue2="16"/>
+
+
+    	<Cmd cenable="1" boxcmd1="slow_update_interval" boxvalue1="56" boxcmd2="fast_update_interval " boxvalue2="12"/>
+    	<Cmd cenable="1" boxcmd1="slow_update_interval" boxvalue1="32" boxcmd2="fast_update_interval " boxvalue2="9"/>
+    	<Cmd cenable="1" boxcmd1="slow_update_interval" boxvalue1="14" boxcmd2="fast_update_interval " boxvalue2="3"/>
+    	<Cmd cenable="1" boxcmd1="slow_update_interval" boxvalue1="7" boxcmd2="fast_update_interval " boxvalue2="2"/>
+    	<Cmd cenable="1" boxcmd1="slow_update_interval" boxvalue1="28" boxcmd2="fast_update_interval " boxvalue2="6"/>
+
+    	<Cmd cenable="0" boxcmd1="slow_update_interval" boxvalue1="112" boxcmd2="fast_update_interval " boxvalue2="24"/>
+    	<Cmd cenable="0" boxcmd1="query_interval" boxvalue1="16" boxcmd2="reply_interval " boxvalue2="16"/>
+
+    	<Cmd cenable="0" boxcmd="echo 1 > /proc/sys/net/mesh/flex_ring" catcmd="cat /proc/sys/net/mesh/flex_ring"/> 
+    	<Cmd cenable="0" boxcmd="echo 25 > /proc/sys/net/mesh/htl_max " catcmd="cat /proc/sys/net/mesh/htl_max "/> 
+    	<Cmd cenable="0" boxcmd="echo 2 > /proc/sys/net/mesh/reply_interval " catcmd="cat /proc/sys/net/mesh/reply_interval "/>
+    	<Cmd cenable="0" boxcmd="echo 1 > /proc/sys/net/mesh/slow_update_interval " catcmd="cat /proc/sys/net/mesh/slow_update_interval "/>
+    	
+    	<Cmd cenable="0" boxcmd="ftpget -u skyphy -p networks -P 21 192.168.1.112 /var/iperf /home/rock/iperf " catcmd="ls /var/ | grep iperf "/>
+    </CmdList>
+
+    <AllBoxInfo>
+      <BoxInfo benable="1" PCAlias="r11" BoxIP="192.168.1.11" />
+      <BoxInfo benable="1" PCAlias="r12" BoxIP="192.168.1.12" />  
+      <BoxInfo benable="1" PCAlias="r13" BoxIP="192.168.1.13" />
+      <BoxInfo benable="1" PCAlias="r14" BoxIP="192.168.1.14" />  
+			<BoxInfo benable="1" PCAlias="r15" BoxIP="192.168.1.15" />
+			<BoxInfo benable="1" PCAlias="r16" BoxIP="192.168.1.16" /> 
+      <BoxInfo benable="1" PCAlias="r17" BoxIP="192.168.1.17" />
+      <BoxInfo benable="1" PCAlias="r18" BoxIP="192.168.1.18" />  
+      <BoxInfo benable="1" PCAlias="r19" BoxIP="192.168.1.19" />
+      <BoxInfo benable="1" PCAlias="r20" BoxIP="192.168.1.20" />  
+			<BoxInfo benable="1" PCAlias="r21" BoxIP="192.168.1.21" />
+			<BoxInfo benable="1" PCAlias="r22" BoxIP="192.168.1.22" /> 
+      <BoxInfo benable="1" PCAlias="r23" BoxIP="192.168.1.23" />
+      <BoxInfo benable="1" PCAlias="r24" BoxIP="192.168.1.24" />  
+      <BoxInfo benable="1" PCAlias="r25" BoxIP="192.168.1.25" />
+      <BoxInfo benable="1" PCAlias="r26" BoxIP="192.168.1.26" />  
+			<BoxInfo benable="1" PCAlias="r27" BoxIP="192.168.1.27" />
+			<BoxInfo benable="1" PCAlias="r28" BoxIP="192.168.1.28" /> 
+			<BoxInfo benable="1" PCAlias="r29" BoxIP="192.168.1.29" />
+      <BoxInfo benable="1" PCAlias="r30" BoxIP="192.168.1.30" />  
+      <BoxInfo benable="1" PCAlias="r31" BoxIP="192.168.1.31" />
+      <BoxInfo benable="1" PCAlias="r32" BoxIP="192.168.1.32" />  
+			<BoxInfo benable="0" PCAlias="r41" BoxIP="192.168.1.41" />
+			<BoxInfo benable="0" PCAlias="r42" BoxIP="192.168.1.42" />
+			<BoxInfo benable="0" PCAlias="r43" BoxIP="192.168.1.43" />
+      <BoxInfo benable="0" PCAlias="r44" BoxIP="192.168.1.44" />  
+      <BoxInfo benable="0" PCAlias="r45" BoxIP="192.168.1.45" />
+      <BoxInfo benable="0" PCAlias="r33" BoxIP="192.168.1.33" />
+
+
+    </AllBoxInfo>
+    		
+		<AllPacketInfo>
+			<PacketInfo senable="0" PacketSize="56" />
+			<PacketInfo senable="0" PacketSize="992" />
+			<PacketInfo senable="0" PacketSize="1450" />
+		  <PacketInfo senable="0" PacketSize="1472" />
+			<PacketInfo senable="0" PacketSize="1473" />
+			<PacketInfo senable="0" PacketSize="1552" />
+		</AllPacketInfo>
+  </GlobalParam>
